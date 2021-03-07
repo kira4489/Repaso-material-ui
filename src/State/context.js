@@ -1,6 +1,6 @@
 import { createContext,useState, useReducer } from 'react'
 import todosReducer from './reducer';
-import {deleteTodo,saveTodoReducer} from "./actions"
+import {deleteTodo,saveTodoReducer, updateTodo} from "./actions"
 
 export const ContextTodo = createContext();
 
@@ -32,6 +32,7 @@ const TodoContext = ({ children }) => {
       todos: state.todos, //reducer, no redux!
       saveTodo: (text) => dispatch(saveTodoReducer(text)), //reducer,no redux
       deleteTodo: (id) => dispatch(deleteTodo(id)), //reducer,no redux
+      updateTodo: (id,newValue) => dispatch(updateTodo(id,newValue))//reducer,no redux
     }}>
       { children }
     </ContextTodo.Provider>

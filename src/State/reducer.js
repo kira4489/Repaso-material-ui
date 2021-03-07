@@ -1,4 +1,4 @@
-import { ADD_TODO, DELETE_TODO, GET_TODOS } from "./types" //esto se pone pork no tiene default solo export
+import { ADD_TODO, DELETE_TODO, GET_TODOS, UPDATE_TODO } from "./types" //esto se pone pork no tiene default solo export
 
 const initialStateTodo = (value) => {
   return {
@@ -25,6 +25,17 @@ const todosReducer = (state, action) => {
          ...state,
          todos: state.todos   //obtener la informacion de los todos
         }
+    case UPDATE_TODO:
+      return {
+        ...state,
+        todos: state.todos.map(todo => {
+          if(todo.id === action.id) {//todo es igual al valor del id 
+            return {...todo, value: action.payload} //que lo cambie al nuevo valor del return
+          } else {
+            return todo
+          }
+        })
+      }
     default:
       return {
         state

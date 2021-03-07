@@ -1,10 +1,9 @@
 import React, { useState, useContext, useReducer } from "react";
 import { ContextTodo } from "../State/context";
-import todosReducer from '../State/reducer';
 
 const Todo = () => {
   const context = useContext(ContextTodo); //almacenando el context los valores CONTEXTODO
-  const [text, setText] = useState("");
+  const [text, setText] = useState(""); // parte del estado del input
 
   return (
     <div>
@@ -17,7 +16,11 @@ const Todo = () => {
       <button onClick={() => context.saveTodo(text)}>Add</button>
       <ul>
         {context.todos?.map((todo) => (
-          <li key={todo.id}>{todo.value}</li>
+          <li key={todo.id}>
+            {todo.value}
+            <button onClick={() => context.deleteTodo(todo.id)}>delete</button>
+            <button onClick={()=> context.updateTodo(todo.id, text)}>update</button> 
+          </li>
         ))}
       </ul>
     </div>
