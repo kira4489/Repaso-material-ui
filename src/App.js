@@ -1,13 +1,16 @@
 import Home from "./Components/Home";
-import Navbar from "./Components/Navbar";
+import Todo from "./Components/Todo";
 import "./App.css";
+import TodoContext from './State/context';
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <Navbar />
-    </div>
+    <TodoContext>
+      <div className="App">
+        <Home />
+        <Todo/>
+      </div>
+    </TodoContext>
   );
 }
 

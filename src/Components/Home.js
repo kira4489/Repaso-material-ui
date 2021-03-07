@@ -37,6 +37,7 @@ const Home = () => {
   // }
   // fetchApi()
   // {data.result.map((data,index)=>{
+    
   return (
     <Layout>
       <input type="text" value={id} onChange={(e) => setId(e.target.value)} />

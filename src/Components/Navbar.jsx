@@ -9,7 +9,7 @@ const Navbar = () =>{
 const classes = useStyles()
  return (
  <div>
-     <AppBar position="fixed" color="primary">
+     <AppBar position="relative" color="primary">
          <Toolbar>
              <Typography variant="h5">
                 Hola

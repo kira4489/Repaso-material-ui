@@ -1,18 +1,13 @@
-import React, { Children } from "react"
+import React from "react"
 import Main from "./Main"
 import Navbar from "./Navbar"
 const Layout = ({children}) =>{
   return (
     <>
-    <nav>
-        <ul>
-          <li>Home</li>
-          <li>Contact</li>
-          <li>About</li>
-        </ul>
-      </nav>
       <Navbar/>
-      <Main children={children} />
+      <Main> 
+      { children /*los children se pasan en cualquier parte asi como esta en este*/} 
+      </Main>
     </>
   )
 }
