@@ -2,6 +2,7 @@ import React, { useState, useContext, useReducer } from "react";
 import { ContextTodo } from "../State/context";
 
 const Todo = () => {
+  //buscar de como destrutcurar un elemento en react
   const context = useContext(ContextTodo); //almacenando el context los valores CONTEXTODO
   const [text, setText] = useState(""); // parte del estado del input
 
@@ -28,3 +29,5 @@ const Todo = () => {
 };
 
 export default Todo;
+
+//usarlo

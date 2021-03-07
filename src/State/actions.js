@@ -19,3 +19,6 @@ export const updateTodo = (id, newValue) => {
     id: id,
   };
 };
+
+//se sus valores de que va hacer cada uno es decir si va tener un nuevo valor o se va
+//a crear o eliminar algun texto
